@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'bhavanikoyada/maven-abhishek-docker-agent:latest'
-      args 'sudo chmod 666 -aG docker root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+      args 'sudo chmod -x /var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
